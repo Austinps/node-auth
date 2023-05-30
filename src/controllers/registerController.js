@@ -1,7 +1,7 @@
-const User = require("../models/User");
-const bcrypt = require("bcrypt");
+import User from "../models/User.js";
+import bcrypt from "bcrypt";
 
-const handleNewUser = async (req, res) => {
+export const handleNewUser = async (req, res) => {
   const { user, pwd } = req.body;
   if (!user || !pwd)
     return res
@@ -29,5 +29,3 @@ const handleNewUser = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-
-module.exports = { handleNewUser };

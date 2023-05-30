@@ -1,4 +1,4 @@
-const { logEvents } = require("./logEvents");
+import logEvents from "./logEvents.js";
 
 const errorHandler = (err, req, res, next) => {
   logEvents(`${err.name}: ${err.message}`, "errLog.txt");
@@ -6,15 +6,4 @@ const errorHandler = (err, req, res, next) => {
   res.status(500).send(err.message);
 };
 
-module.exports = errorHandler;
-
-const notFound = (req, res) => {
-  res.status(404);
-  if (req.accepts("html")) {
-    res.sendFile(path.join(__dirname, "views", "404.html"));
-  } else if (req.accepts("json")) {
-    res.json({ error: "404 Not Found" });
-  } else {
-    res.type("txt").send("404 Not Found");
-  }
-};
+export default errorHandler;
