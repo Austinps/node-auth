@@ -55,5 +55,5 @@ The application supports the following routes:
 /users: User-related routes.
 /notes: Note-related routes.
 
-License
+## License
 This project is private and not publicly available.
