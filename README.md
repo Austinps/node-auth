@@ -56,4 +56,4 @@ The application supports the following routes:
 /notes: Note-related routes.
 
 License
-This project is licensed under the ISC License. See the LICENSE file for details.
+This project is private and not publicly available.
